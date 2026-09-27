@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Neo Cyberpunk Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <canvas id="gl"></canvas>
+    <div id="hud"></div>
+    <div id="txt">
+      <span class="l"></span><span class="m"></span><span class="r"></span>
+    </div>
+    <div id="ctrlDock">
+      <button id="gearBtn" title="Settings">⚙</button>
+      <button id="audioBtn" title="Share Tab Audio">🔊</button>
+    </div>
+    <div id="settingsPanel"></div>
+    <script src="main.js"></script>
+    <script src="capture.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>
