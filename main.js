@@ -1010,3 +1010,19 @@
   }
   raf = requestAnimationFrame(loop);
 })();
+
+/* Robust viewport sync: some browsers (e.g. after a tab-share/info bar
+   disappears) don't fire a window "resize" event, leaving a stale height. */
+(function () {
+  let lw = innerWidth, lh = innerHeight;
+  const sync = () => {
+    if (innerWidth !== lw || innerHeight !== lh) {
+      lw = innerWidth; lh = innerHeight;
+      dispatchEvent(new Event("resize"));
+    }
+  };
+  setInterval(sync, 200);
+  if (window.visualViewport) visualViewport.addEventListener("resize", sync);
+  if (window.ResizeObserver) new ResizeObserver(sync).observe(document.documentElement);
+  document.addEventListener("fullscreenchange", () => setTimeout(sync, 50));
+})();
