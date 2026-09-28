@@ -81,6 +81,7 @@
 
   gear.addEventListener("click", () => panel.classList.toggle("open"));
   document.addEventListener("click", (e) => {
-    if (!panel.contains(e.target) && e.target !== gear) panel.classList.remove("open");
+    if (!panel.contains(e.target) && e.target !== gear)
+      panel.classList.remove("open");
   });
 })();
