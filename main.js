@@ -765,7 +765,7 @@
       barW = bw * 0.62;
     let o = 0;
     for (let i = 0; i < NUM_BARS; i++) {
-      const h = Math.min(1, bars[i]) * 1.9;
+      const h = Math.min(1, bars[i]) * 2.0;
 
       // Stop generating vertex data if height is below visual threshold
       if (h < 0.02 || bars[i] <= 0) {
